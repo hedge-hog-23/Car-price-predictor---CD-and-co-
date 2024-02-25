@@ -2,9 +2,9 @@ import streamlit as st
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestRegressor
-
 import numpy as np
 import joblib
+import openai
 
 # Load your dataset as a DataFrame
 data = pd.read_csv('cardekho_dataset.csv')  # Replace 'your_dataset.csv' with your actual file path
@@ -86,3 +86,37 @@ user_transmission = st.sidebar.selectbox("Select transmission type", data['trans
 if st.sidebar.button("Predict"):
     predicted_price = predict_price(user_brand, user_model, user_age, user_km_driven, user_fuel_type, user_transmission)
     st.success(f"Predicted Price: Rupees {np.round(predicted_price, 2)}")
+
+
+# New section for user prompts
+st.header("CD AI : Ask your doubts !!")
+
+# Input box for user prompts
+user_prompt = st.text_area("CD AI : Ask your doubts !!")
+
+# OpenAI API key (replace 'your_openai_api_key' with your actual API key)
+openai.api_key = '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'
+
+
+# Button to generate response using OpenAI API
+# Button to generate response using OpenAI API
+if st.button("fetch results"):  
+    if user_prompt:
+        try:
+            # Call OpenAI API to generate response using the "text-davinci-003" model and v1/chat/completions endpoint
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": "You are a helpful assistant."},
+                    {"role": "user", "content": user_prompt},
+                ],
+                max_tokens=150  # You can adjust this based on your needs
+            )
+
+            # Display the generated response
+            st.write("Generated Response:")
+            st.write(response['choices'][0]['message']['content'].strip())
+        except Exception as e:
+            st.error(f"Error generating response: {str(e)}")
+    else:
+        st.warning("Please enter a prompt before generating a response.")
