@@ -93,12 +93,13 @@ if st.sidebar.button("Predict"):
 
 # New section for user prompts
 st.header("CD AI : Ask your doubts !!")
+st.markdown("### Smaller Heading in Streamlit")
 
 # Input box for user prompts
 user_prompt = st.text_area("CD AI : Ask your doubts !!")
 
 # OpenAI API key (replace 'your_openai_api_key' with your actual API key)
-openai.api_key = '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'
+openai.api_key = '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'
 
 
 # Button to generate response using OpenAI API
