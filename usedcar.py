@@ -99,7 +99,7 @@ st.header("CD AI : Ask your doubts !!")
 user_prompt = st.text_area("CD AI : Ask your doubts !!")
 
 # OpenAI API key (replace 'your_openai_api_key' with your actual API key)
-openai.api_key = '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'
+openai.api_key = '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'
 
 
 # Button to generate response using OpenAI API
