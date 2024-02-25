@@ -94,12 +94,11 @@ if st.sidebar.button("Predict"):
 # New section for user prompts
 st.header("CD AI : Ask your doubts !!")
 
-
 # Input box for user prompts
 user_prompt = st.text_area("CD AI : Ask your doubts !!")
 
 # OpenAI API key (replace 'your_openai_api_key' with your actual API key)
-openai.api_key = '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'
+openai.api_key = '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'
 
 
 # Button to generate response using OpenAI API
