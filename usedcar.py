@@ -93,7 +93,7 @@ if st.sidebar.button("Predict"):
 
 # New section for user prompts
 st.header("CD AI : Ask your doubts !!")
-st.markdown("### Smaller Heading in Streamlit")
+
 
 # Input box for user prompts
 user_prompt = st.text_area("CD AI : Ask your doubts !!")
