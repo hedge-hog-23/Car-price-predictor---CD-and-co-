@@ -1,4 +1,5 @@
 import streamlit as st
+st.code('pip install scikit-learn')
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestRegressor
