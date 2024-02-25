@@ -1,11 +1,13 @@
-import streamlit as st
 
+import streamlit as st
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestRegressor
 import numpy as np
 import joblib
 import openai
+
+
 
 # Load your dataset as a DataFrame
 data = pd.read_csv('cardekho_dataset.csv')  # Replace 'your_dataset.csv' with your actual file path
@@ -96,7 +98,7 @@ st.header("CD AI : Ask your doubts !!")
 user_prompt = st.text_area("CD AI : Ask your doubts !!")
 
 # OpenAI API key (replace 'your_openai_api_key' with your actual API key)
-openai.api_key = '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'
+openai.api_key = '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'
 
 
 # Button to generate response using OpenAI API
